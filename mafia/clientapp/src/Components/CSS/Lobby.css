@@ -1,0 +1,515 @@
+﻿
+.lobby-container,
+.host-lobby-container,
+.host-start-container,
+.host-night-container,
+.host-morning-container,
+.player-lobby-container,
+.player-start-container,
+.player-night-container,
+.player-morning-container{
+    background: url('../paper.jpg') no-repeat;
+    background-size: cover;
+    width: 100vw;  
+    height: 100vh; 
+    margin: 0;    
+    padding: 100px;   
+    box-sizing: border-box;  
+    border: 1px solid #000;
+}
+
+.player-lobby-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    padding: 20px; 
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.left-side { 
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 2%;
+}
+.right-side { 
+    display: inline-block;
+    position: fixed;
+    width:30%;
+    top: 20%;
+    right: 10%;
+    margin-bottom: 2%;
+}
+
+.MessageInput {
+    flex-grow: 1; 
+}
+
+@font-face {
+    font-family: GodFatherFont;
+    src: url("../Fonts/TheGodfather-v2.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    src: url("../Fonts/Merriweather-Light.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherBold;
+    src: url("../Fonts/Merriweather-Bold.ttf");
+}
+
+.game-info {
+    color: #000; 
+    border-radius: 15px;
+    width: 70%;
+    margin-left: 1%;
+    padding: 1%;
+    display: inline-flex;
+    height: 10%;
+    font-family: "Times New Roman";
+    font-size: 20px;
+    text-align: left; 
+}
+
+.waiting{
+    display: inline-flex;
+}
+
+h1{
+    font-size: 80px;
+    letter-spacing: 8px;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-family: "Times New Roman";
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+.TitlePlayer{
+    font-family: GodFatherFont;
+    font-size: 80px;
+}
+
+.TitleGameInfo{
+    font-family: GodFatherFont;
+    font-size: 80px;
+    letter-spacing: 3px;
+}
+
+.player-list {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-family: MerriweatherBold, Serif;
+    font-size: 20px;
+}
+
+.player-list li {
+    background-color: rgba(138, 106, 69, 0.65);
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid black;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    background-color: rgba(84, 63, 39, 0.65);
+}
+
+.players {
+    background-color: rgba(138, 106, 69, 0.65); /* Semi-transparent background for list items */
+    border: 3px solid #000000;
+    margin: 1%;
+    padding: 1%;
+    height: 350px;
+    width: 60%;
+    border-radius: 15px; /* Optional: round the corners of the list items */
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+}
+
+
+.box{
+    background-color: rgba(138, 106, 69, 0.65);
+    display: inline-flex;
+    width: 100%;
+    border-radius: 15px;
+    border: black solid 2px;
+}
+
+.head{
+    display: inline-flex;
+    width: 100%;  
+}
+
+.chat-box {
+    background-color: rgba(138, 106, 69, 0.94); 
+    margin: 5%;
+    margin-left: 1%;
+    padding: 1%;
+    height: 350px;
+    width: 100%;
+    border: 3px solid #000000; 
+    border-radius: 15px;
+    overflow-y: auto; 
+    
+}
+.chat-box ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    font-family: MerriweatherLight, Serif;
+}
+.chat-box li {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 2px solid #000;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: rgba(138, 106, 69, 0.94);
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-family: MerriweatherLight, Serif;
+}
+
+.chat-box li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    background-color: rgba(84, 63, 39, 0.65);
+}
+
+.chat-box strong {
+    font-family: MerriweatherBold, Serif;
+}
+
+.input-field,
+button {
+    cursor: pointer;
+    width: 100%; 
+    padding: 0;
+    margin-top: 1%; 
+    box-sizing: border-box; 
+}
+button {
+    background-color: rgba(138, 106, 69, 0.65); 
+    color: rgb(0, 0, 0);
+    border: 3px solid #000000;
+    max-width: 300px;
+    font-family: GodFatherFont;
+    font-weight: normal;
+    font-size: 80px;
+    border-radius: 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background-color: rgba(84, 63, 39, 0.65);
+    transform: translateY(-2px);
+}
+
+.start-button {
+    position: fixed;
+    height: 12%;
+    width: 30%;
+    right: -6%;
+    text-align: center; 
+    padding-right: 8%;
+    font-weight: normal;
+}
+
+.rule-button {
+    height: 12%;
+    width: 30%;
+    text-align: center; 
+    margin-top: 1%;
+    padding-right: 8%;
+    margin-left: 2%;
+}
+
+.info-button {
+    height: 12%;
+    width: 30%;
+    text-align: center; 
+    margin-top: 1%;
+    padding-right: 8%;
+    margin-left: 2%;
+}
+
+.continue-button {
+    height: 12%;
+    width: 30%;
+    text-align: center; 
+    margin-top: 1%;
+    padding-right: 8%;
+    margin-left: 2%;
+    font-weight: normal;
+}
+
+.ready-check-button {
+    height: 12%;
+    width: 30%;
+    text-align: center; 
+    margin-top: 1%;
+    padding-right: 8%;
+    margin-left: 2%;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+.title p {
+    margin: 0;
+    height: 15%;
+    text-align: justify-all;
+    font-size: 40px;
+    font-family: GodFatherFont;
+    Padding: 1%;
+    
+}
+
+
+
+Input{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(138, 106, 69, 0.9);
+    color: rgb(0, 0, 0);
+    border: 3px solid #000000;
+    border-radius: 15px;
+    font-size: 20px;
+    padding: 1%;
+    transition: background-color 0.3s ease;
+    font-family: MerriweatherBold;
+}
+
+Input:hover {
+    background-color: rgba(84, 63, 39, 0.65); 
+}
+
+Input:After {
+    background-color: rgba(84, 63, 39, 0.65); 
+}
+
+.SendMessage{
+    width: 50%;
+    margin-left: 53%;
+    margin-top: 2%;
+    height: 50px;
+    font-size: 30px;
+    text-align: justify-all;
+    padding: 1%;
+}
+
+
+
+@media (max-width: 768px) {
+    .lobby-container,
+    .host-lobby-container,
+    .player-lobby-container {
+        width: 90%; 
+        margin: 5px auto;
+    }
+}
+
+
+
+
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 65px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #000000;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.new-message-alert {
+    position: sticky;
+    bottom: 1%;
+    border: 2px solid #000000;
+    background-color: rgb(193, 104, 79);
+    color: rgba(250, 234, 211, 0.97);
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 24px;
+    font-family: GodFatherFont;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    display: none;
+}
+
+.chat-box .new-message-alert.show {
+    display: block;
+}
+
+.chat-box .new-message-alert {
+    transition: all 0.3s;
+}
+
+.chat-title {
+    font-family: GodFatherFont;
+    font-size: 40px; 
+    text-align: left;
+    color: rgb(0, 0, 0); 
+    margin-bottom: 10px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.chat-box .new-message-alert {
+    animation: pulse 2s infinite;
+}
+
+.player-start-chat-box {
+    position: fixed;
+    margin-right:1%;
+    border-radius:15px;
+    bottom: 10%;
+    right: -48%; 
+    width: 30%; 
+    height: 75vh;
+    background-color: rgb(171, 127, 76);
+    padding: 2%;
+    color: #000000;
+    border: black solid 2px;
+    overflow-y: auto;
+    transition: right 0.5s ease-in-out;
+    z-index: 1000; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+
+.toggle-chat-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1001;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(138, 106, 69, 0.65);
+    color: rgb(0, 0, 0);
+    border: 3px solid #000000;
+    border-radius: 15px;
+    font-family: MerriweatherBold;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+}
+.toggle-chat-button:hover {
+    background-color: rgba(84, 63, 39, 0.65); 
+}
+
+
+.player-start-chat-box.active {
+    right: 0; 
+}
+
+
+.hostChat{
+    width: 30%;
+    margin-top: 1%;
+}
+
+.HiddenChatbox{
+    width: 80%;
+    display: flex;
+}
+
+.chat-box::-webkit-scrollbar {
+    display: none;
+}
+
+.box h3{
+    right: 35%;
+    font-family: GodFatherFont;
+    font-size: 30px;
+    letter-spacing: 8px;
+}

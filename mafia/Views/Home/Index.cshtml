@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Home Page";
+    var nickname = "";
+    if (User.Identity.IsAuthenticated)
+    {
+        var user = await UserManager.FindByEmailAsync(User.Identity.Name);
+        nickname = user?.Nickname ?? "";
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <!-- Other head elements like CSS links -->
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<script>
+    window.isLoggedIn = @User.Identity.IsAuthenticated.ToString().ToLower();
+    window.nickname = "@nickname";
+</script>
+
+
+
+
+
+
+
+<div class="text-center">
+    <br/>
+    <br/>
+    <h1 class="Title">Godforsaken Place</h1>
+    <ul class="home-menu">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="home-menu-item">
+                <a class="home-menu-link-text" onclick="hostGame()">Host Game</a>
+            </li>
+
+            <li class="home-menu-item">
+                <a class="home-menu-link-text" onclick="showJoinGameModal()">Join Game</a>
+            </li>
+        }
+        else
+        {
+            <li class="home-menu-item">
+                <a class="home-menu-link-text" onclick="showNicknameModal()">Join Game</a>
+            </li>
+        }
+
+        <li class="home-menu-item">
+            <a class="home-menu-link-text" asp-area="" asp-controller="Home" asp-action="Characters">Characters</a>
+        </li>
+        <li class="home-menu-item">
+            <a class="home-menu-link-text" asp-controller="Home" asp-action="News">News</a>
+        </li>
+        <li class="home-menu-item">
+            <a class="home-menu-link-text" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+<!-- Join Game Modal -->
+<div id="joinGameModal" class="modal">
+    <div class="modal-content">
+        <h2>Join Game</h2>
+        <label for="gameCode">Enter Game Code:</label>
+        <input type="text" id="gameCode" name="gameCode" class="modal-input">
+        <button onclick="joinGame()" class="modal-button">Join</button>
+        <button onclick="closeModal()" class="modal-button">Close</button>
+    </div>
+</div>
+
+<!-- Nickname Modal for Unauthenticated Users -->
+<div id="nicknameModal" class="modal">
+    <div class="modal-content">
+        <h2>Enter Nickname</h2>
+        <input type="text" id="nickname" name="nickname" class="modal-input">
+        <button onclick="proceedWithNickname()" class="modal-button">Proceed</button>
+        <button onclick="closeNicknameModal()" class="modal-button">Close</button>
+    </div>
+</div>
+
+<script src="~/js/gameActions.js"></script>
+</body>
+</html>

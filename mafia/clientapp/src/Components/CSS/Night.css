@@ -1,0 +1,170 @@
+﻿@font-face {
+    font-family: GodFatherFont;
+    src: url("../Fonts/TheGodfather-v2.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    src: url("../Fonts/Merriweather-Light.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherBold;
+    src: url("../Fonts/Merriweather-Bold.ttf");
+}
+.host-night-container h1{
+    font-family: GodFatherFont;
+    text-align: center;
+    font-size: 6em;
+}
+
+.player-night-container h1{
+    font-family: GodFatherFont;
+    text-align: center;
+    font-size: 6em;
+    
+}
+.narator{
+    width: 50%;
+    height: auto;
+    box-shadow: black;
+}
+.narator img{
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: -2px 0 200px rgba(0, 0, 0, 0.5);
+}
+.role-description-text{
+    font-family: "Times New Roman";
+    font-size: 2em;
+}
+.Role-Container-Night {
+    position: fixed;
+    margin-right:1%;
+    border-radius:15px;
+    bottom: 10%;
+    left: -40%; 
+    width: 30%; 
+    height: 50vh; 
+    background-color: rgb(171, 127, 76);
+    padding: 2%;
+    color: #000000;
+    border: black solid 2px;
+    overflow-y: auto;
+    transition: left 0.5s ease-in-out;
+    z-index: 1000; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+.Role-Container-Night h1{
+    font-size: 4em;
+}
+.Role-Container-Night p{
+    font-family: GodFatherFont;
+    font-size: 3em;
+}
+.Role-Container-Night.active{
+    left: 1%;
+}
+.role-container-button{
+    position: fixed;
+    left:1%;
+    bottom: 1%;
+    z-index: 1001; 
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(138, 106, 69, 0.65);
+    color: rgb(0, 0, 0);
+    border: 3px solid #000000;
+    border-radius: 15px;
+    font-family: GodFatherFont;
+    font-size: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+}
+
+.PlayerNightChoiceWindow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Changed to space-between to distribute space */
+    border: black solid 3px;
+    border-radius: 15px;
+    width: 60%;
+    margin-left: 20%;
+    height: auto; /* You might want to adjust this if content still sticks out */
+    background-color: rgba(138, 106, 69, 0.65);
+    padding: 2%;
+    box-sizing: border-box; /* Make sure padding is included in the height */
+}
+
+.PlayerNightChoiceWindow h1 {
+    font-family: GodFatherFont;
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.PlayerNightChoiceWindow .content {
+    display: flex;
+    flex-direction: column; /* Stack the p and DetectiveChoice on top of each other */
+    align-items: center; /* Center the content horizontally */
+    width: 100%;
+    height: auto; /* Let it take as much height as needed */
+    margin: 1% 0; /* Add some margin top and bottom */
+}
+
+.PlayerNightChoiceWindow p {
+    font-family: "MerriweatherBold";
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 100%; /* Adjusted to 70% of the parent container */
+    margin: 1% 0; /* Add some margin top and bottom */
+    text-align: center; /* Align text to the left */
+}
+
+.PlayerNightChoiceWindow .DetectiveChoice {
+    width: 60%;
+    height: auto;
+    margin-bottom: 1%;
+}
+
+.PlayerNightChoiceWindow button{
+    height: auto;
+    padding: 10px;
+    font-size: 1.5em;
+    font-family: GodFatherFont;
+    margin: 2% ; /* Add margin to the top and bottom */
+    cursor: pointer; /* Make it look clickable */
+    border: none;
+    border-radius: 15px;
+    background-color: #805533; /* A color that fits the theme */
+    color: white;
+    border: black solid 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+    transition: background-color 0.3s ease; /* Transition for when the button is interacted with */
+}
+
+.PlayerNightChoiceWindow button:hover{
+    background-color: #9a6f50; /* Slightly lighter color on hover */
+}
+
+.PlayerNightChoiceWindow button:active{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Less shadow when button is pressed */
+}
+.players2 {
+    background-color: rgba(138, 106, 69, 0.65);
+    border: 3px solid #000000;
+    margin: 1%;
+    padding: 5%;
+    height: auto; /* Changed from a fixed height to auto */
+    max-height: 350px; /* Set a max-height instead */
+    width: 60%;
+    border-radius: 15px;
+    overflow-y: auto; /* Allow scrolling for overflow */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    gap: 10px;
+}

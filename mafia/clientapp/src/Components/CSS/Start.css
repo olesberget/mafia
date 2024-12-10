@@ -1,0 +1,201 @@
+@font-face {
+    font-family: GodFatherFont;
+    src: url("../Fonts/TheGodfather-v2.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherLight;
+    src: url("../Fonts/Merriweather-Light.ttf");
+}
+
+@font-face {
+    font-family: MerriweatherBold;
+    src: url("../Fonts/Merriweather-Bold.ttf");
+}
+
+@font-face {
+    font-family: carnaval;
+    src: url("../Fonts/CarnivaleeFreakshow-DLrm.ttf");
+}
+
+.player-start-container {
+    background: url('../paper.jpg');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 50px 50px 100px; 
+    box-sizing: border-box;
+    font-family: GodFatherFont;
+}
+
+h1 {
+    font-size: 80px;
+    margin-bottom: 50px;
+    font-weight: normal;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    margin-bottom: 20px; 
+}
+.player-role-bar,
+.rules {
+    background-color: rgba(138, 106, 69, 0.65);
+    color: #000;
+    border: black solid 2px;
+    border-radius: 15px;
+    cursor: pointer;
+    letter-spacing: 5px;
+    font-family: GodFatherFont;
+    font-size: 2.5em;
+    padding: 20px;
+    width: calc(50% - 60px);
+    transition: all 0.3s ease;
+}
+
+.player-role-bar:hover,
+.rules:hover {
+    background-color: rgba(84, 63, 39, 0.65);
+    transform: scale(1.05);
+}
+
+.player-role-bar.active,
+.rules.active {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto; 
+}
+
+.role-description,
+.Rules {
+    background-color: #f4e8cd;
+    color: #3e2723;
+    padding: 1%;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 2s ease;
+    display: none;
+}
+
+.player-role-bar.active .role-description,
+.rules.active .Rules {
+    display: block; 
+    margin-top: 10px;
+    max-height: 40vh; 
+}
+
+.ready-check-button {
+    position: fixed;
+    left: 0;
+    bottom: 5%;
+}
+
+.ready-check-button button{
+    cursor: pointer;
+    border: black solid 2px;
+    background-color: rgba(138, 106, 69, 0.65);
+    color: #000000;
+    padding: 2%;
+    font-size: 4em;
+    font-weight: lighter;
+    letter-spacing: 6px;
+    font-family: GodFatherFont;
+    border-radius: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.toggle-chat-button{
+    cursor: pointer;
+    border: black solid 2px;
+    background-color: rgba(138, 106, 69, 0.65);
+    color: #000000;
+    padding: 0.5%;
+    font-size: 2em;
+    font-family: GodFatherFont;
+    border-radius: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.ready-check-button button:hover{
+    background-color: rgba(84, 63, 39, 0.65);
+}
+.toggle-chat-button:hover {
+    background-color: rgba(84, 63, 39, 0.65);
+}
+
+
+.character-container {
+    width: 100%;
+    transition: all 2s ease;
+}
+
+.character-container div {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2%;
+    transition: all 2s ease;
+}
+
+.character-container img {
+    padding: 2%;
+    width: 80%;
+    height: auto;
+    margin-bottom: 2%;
+    transition: all 2s ease;
+}
+
+.role-display {
+    display: inline-flex;
+}
+
+.host-start-container h1{
+    font-family: GodFatherFont;
+    text-align: center;
+    font-size: 10em;
+}
+.host-start-container h2{
+    font-family: Merriweatherbold;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 2%;
+}
+.host-start-container .hostStartButtons {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.host-start-container button {
+    background-color: rgba(138, 106, 69, 0.65); 
+    color: #000000;
+    border: black solid 2px;
+    padding: 10px;
+    font-family: 'GodFatherFont', sans-serif;
+    font-size: 4em;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.host-start-container button:hover {
+    background-color: rgba(84, 63, 39, 0.65); 
+    transform: scale(1.05); 
+}
+
+.character-container p{
+    font-size: 1em;
+}

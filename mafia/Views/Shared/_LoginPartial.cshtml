@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    var user = await UserManager.GetUserAsync(User);
+    var nickname = user?.Nickname ?? User.Identity?.Name;
+    <ul class="nav-list">
+        <h2>Welcome @nickname!!</h2>
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+        <li><a class="nav-button" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Manage Account</a></li>
+        <li>
+            <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="nav-button logoutbutton">Logout</button>
+            </form>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav-list">
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a class="nav-button" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+        <li><a class="nav-button" asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+        <li><a class="nav-button" asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+    </ul>
+}

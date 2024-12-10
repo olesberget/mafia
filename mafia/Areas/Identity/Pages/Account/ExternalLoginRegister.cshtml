@@ -1,0 +1,15 @@
+@page
+@model ExternalLoginRegisterModel
+
+<h2>Complete Your Registration</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Input.Email" />
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="form-group">
+        <label asp-for="Input.Nickname">Nickname</label>
+        <input asp-for="Input.Nickname" class="form-control" />
+        <span asp-validation-for="Input.Nickname" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Complete Registration</button>
+</form>

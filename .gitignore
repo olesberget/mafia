@@ -1,0 +1,12 @@
+.idea
+bin
+cmake-build-*
+obj
+venv
+*.db
+*.pyc
+*.swp
+*.DS_Store
+Migrations/
+db/
+node_modules/
